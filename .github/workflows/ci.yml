@@ -1,5 +1,8 @@
 name: QualyTeam Challenge 2023 💻
 on: [push]
+env:
+  user_name: papitorocks
+  password: pwd123
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
