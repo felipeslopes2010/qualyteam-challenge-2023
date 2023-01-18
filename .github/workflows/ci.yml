@@ -3,9 +3,6 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
-    env:
-      Cypress.env('user_name'): papitorocks
-      Cypress.env('password'): pwd123
     steps:
       - name: Checkout
         uses: actions/checkout@v2
