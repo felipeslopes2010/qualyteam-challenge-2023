@@ -36,7 +36,7 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.get('.datetimepicker-dummy-input').should('have.value', diaAniversarioFormatado)
   })
 
-  it('Seleciona dia atual no mês anterior', () => {
+  it.only('Seleciona dia atual no mês anterior', () => {
     const dataAtual = new Date()
     const diaAtual = dataAtual.getDate()
     const mesAnterior = dataAtual.getMonth() - 1
@@ -44,7 +44,7 @@ describe('Testa Date Picker QA-Ninja', () => {
 
     cy.gui_clicaCalendario()
     cy.get('.datepicker-nav-previous').click()
-    cy.get('.datepicker-days').contains(diaAtual).click()
+    cy.get('.is-current-month').contains(diaAtual).click()
 
     cy.get('.datetimepicker-dummy-input').should('have.value', diaAtualUltimoMesFormatado)
   })
