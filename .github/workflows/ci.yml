@@ -4,8 +4,8 @@ jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     env:
-      user_name: papitorocks
-      password: pwd123
+      Cypress.env('user_name'): papitorocks
+      Cypress.env('password'): pwd123
     steps:
       - name: Checkout
         uses: actions/checkout@v2
