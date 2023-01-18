@@ -29,12 +29,12 @@ describe('Testa Date Picker QA-Ninja', () => {
   })
 
   it('Seleciona data de aniversário', () => {
-    const birthday = new Date('03-17-2023').toLocaleDateString(locale)
+    const birthday = new Date(`${BIRTHDAY_MONTH}-${BIRTHDAY_DATE}-${CURRENT_YEAR}`).toLocaleDateString(locale)
 
     cy.gui_clicaCalendario()
     cy.get('.datepicker-nav').click()
-    cy.get('[data-month="03"]').click()
-    cy.get('.datepicker-days').contains('17').click()
+    cy.get(`[data-month=${BIRTHDAY_MONTH}]`).click()
+    cy.get('.is-current-month').contains(BIRTHDAY_DATE).click()
 
     cy.get('.datetimepicker-dummy-input').should('have.value', birthday)
   })
