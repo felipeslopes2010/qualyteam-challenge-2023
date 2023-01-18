@@ -42,7 +42,7 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 ## Ferramentas Utilizadas 🛠️
 - Cypress 12.3.0
-- Faker-JS 7.6.0 para criação de dados falsos
+- Faker-JS 7.6.0 para criação de dados falsos no formulário de testes
 - CI/CD Pipeline por meio do GitHub Actions utilizando Environment Secrets em dados sensíveis
 
 ## Como reproduzir 🧪
