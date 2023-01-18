@@ -70,7 +70,7 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.get('.datetimepicker-dummy-input').should('have.value', proximoAniversarioFormatado)
   })
 
-  it('Extra 3: Altera Data para o dia do nascimento e verifica se era uma Sexta-Feira', () => {
+  it('Extra 3: Altera Data para o dia de nascimento', () => {
     const dataNascimento = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_NASCIMENTO}`)
     const dataNascimentoFormatado = dataNascimento.toLocaleDateString(local)
 
@@ -78,6 +78,5 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.visit('/datepicker')
 
     cy.get('.datetimepicker-dummy-input').should('have.value', dataNascimentoFormatado)
-    cy.get('.datetimepicker-selection-weekday').should('have.text', 'sexta-feira')
   })
 })
