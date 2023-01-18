@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   beforeEach(() => {
@@ -6,8 +6,8 @@ describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida mensagem de erro ao realizar Login sem Nickname', () => {
-    const password = Cypress.env('user_password')
-    cy.get('input[type=password]').type(password, { log: false, delay: 0 })
+    const senha = Cypress.env('user_password')
+    cy.get('input[type=password]').type(senha, { log: false, delay: 0 })
     cy.get('button[type="submit"]').click()
 
     cy.contains('Ops! Informe seu nickname.').should('be.visible')
@@ -16,8 +16,8 @@ describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida mensagem de erro ao realizar Login sem Senha', () => {
-    const user = Cypress.env('user_name')
-    cy.get('input[type="text"]').type(user, { delay: 0 })
+    const nomeUsuario = Cypress.env('user_name')
+    cy.get('input[type="text"]').type(nomeUsuario, { delay: 0 })
     cy.get('button[type="submit"]').click()
 
     cy.contains('Ops! Informe sua senha secreta.').should('be.visible')
@@ -26,11 +26,11 @@ describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida Login com Sucesso', () => {
-    const user = {
+    const usuario = {
       login: Cypress.env('user_name'),
-      password: Cypress.env('user_password')
+      senha: Cypress.env('user_password')
     }
-    cy.gui_realizaLogin(user)
+    cy.gui_realizaLogin(usuario)
 
     cy.contains('Olá Papito, bem-vindo ao Orkut').should('be.visible')
     cy.get('.is-danger').should('be.visible')
@@ -39,36 +39,36 @@ describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida mensagem de erro ao realizar Login com Nickname incorreto', () => {
-    const userNickIncorreto = {
+    const usuarioNicknameIncorreto = {
       login: faker.random.word().toLowerCase(),
-      password: Cypress.env('user_password')
+      senha: Cypress.env('user_password')
     }
 
-    cy.gui_realizaLogin(userNickIncorreto)
+    cy.gui_realizaLogin(usuarioNicknameIncorreto)
     cy.contains('Oops! nickname e/ou senha incorretos :(').should('be.visible')
 
     cy.verificaUrl('login')
   })
 
   it('Valida mensagem de erro ao realizar Login com Senha incorreta', () => {
-    const userSenhaIncorreta = {
+    const usuarioSenhaIncorreta = {
       login: Cypress.env('user_name'),
-      password: faker.random.word(),
+      senha: faker.random.word(),
     }
 
-    cy.gui_realizaLogin(userSenhaIncorreta)
+    cy.gui_realizaLogin(usuarioSenhaIncorreta)
     cy.contains('Oops! nickname e/ou senha incorretos :(').should('be.visible')
 
     cy.verificaUrl('login')
   })
 
   it('Valida mensagem de erro ao realizar Login com Nickname e Senha incorretos', () => {
-    const userNickESenhaIncorretos = {
+    const usuarioNicknameESenhaIncorretos = {
       login: faker.random.word().toLowerCase(),
-      password: faker.random.word(),
+      senha: faker.random.word(),
     }
 
-    cy.gui_realizaLogin(userNickESenhaIncorretos)
+    cy.gui_realizaLogin(usuarioNicknameESenhaIncorretos)
     cy.contains('Oops! nickname e/ou senha incorretos :(').should('be.visible')
 
     cy.verificaUrl('login')

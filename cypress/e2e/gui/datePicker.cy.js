@@ -39,8 +39,8 @@ describe('Testa Date Picker QA-Ninja', () => {
   })
 
   it('Seleciona dia atual no mês anterior', () => {
-    const mesAnterior = dataAtual.getMonth() - 1;
-    const diaAtualUltimoMesFormatado = new Date(dataAtual.getFullYear(), mesAnterior, dataAtual.getDate()).toLocaleDateString(local);
+    const mesAnterior = dataAtual.getMonth() - 1
+    const diaAtualUltimoMesFormatado = new Date(dataAtual.getFullYear(), mesAnterior, dataAtual.getDate()).toLocaleDateString(local)
 
     cy.gui_clicaCalendario()
     cy.get('.datepicker-nav-previous').click()
@@ -50,7 +50,7 @@ describe('Testa Date Picker QA-Ninja', () => {
   })
 
   it('Extra 1: Altera Data para aniversário e valida sua seleção', () => {
-    const diaAniversarioFormatado = diaAniversario.toLocaleDateString(local);
+    const diaAniversarioFormatado = diaAniversario.toLocaleDateString(local)
 
     cy.clock(diaAniversario)
     cy.visit('/datepicker')
