@@ -6,7 +6,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida mensagem de erro ao realizar Login sem Nickname', () => {
-    const senha = Cypress.env('user_password')
+    const senha = Cypress.env('usuario_senha')
     cy.get('input[type=password]').type(senha, { log: false, delay: 0 })
     cy.get('button[type="submit"]').click()
 
@@ -16,8 +16,8 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
   })
 
   it('Valida mensagem de erro ao realizar Login sem Senha', () => {
-    const nomeUsuario = Cypress.env('user_name')
-    cy.get('input[type="text"]').type(nomeUsuario, { delay: 0 })
+    const usuarioLogin = Cypress.env('usuario_login')
+    cy.get('input[type="text"]').type(usuarioLogin, { delay: 0 })
     cy.get('button[type="submit"]').click()
 
     cy.contains('Ops! Informe sua senha secreta.').should('be.visible')
@@ -27,8 +27,8 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
 
   it('Valida Login com Sucesso', () => {
     const usuario = {
-      login: Cypress.env('user_name'),
-      senha: Cypress.env('user_password')
+      login: Cypress.env('usuario_login'),
+      senha: Cypress.env('usuario_senha')
     }
     cy.gui_realizaLogin(usuario)
 
@@ -41,7 +41,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
   it('Valida mensagem de erro ao realizar Login com Nickname incorreto', () => {
     const usuarioNicknameIncorreto = {
       login: faker.random.word().toLowerCase(),
-      senha: Cypress.env('user_password')
+      senha: Cypress.env('usuario_senha')
     }
 
     cy.gui_realizaLogin(usuarioNicknameIncorreto)
@@ -52,7 +52,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
 
   it('Valida mensagem de erro ao realizar Login com Senha incorreta', () => {
     const usuarioSenhaIncorreta = {
-      login: Cypress.env('user_name'),
+      login: Cypress.env('usuario_login'),
       senha: faker.random.word(),
     }
 
