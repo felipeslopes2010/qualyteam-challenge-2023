@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       CYPRESS_user_name: ${{secrets.CYPRESS_user_name}}
-      CYPRESS_password': ${{secrets.CYPRESS_password}}
+      CYPRESS_user_password': ${{secrets.CYPRESS_user_password}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
