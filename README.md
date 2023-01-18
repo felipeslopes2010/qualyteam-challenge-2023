@@ -43,6 +43,7 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 ## Ferramentas Utilizadas 🛠️
 - Cypress 12.3.0
 - Faker-JS 7.6.0 para criação de dados falsos
+- CI/CD Pipeline por meio do GitHub Actions
 
 ## Como reproduzir 🧪
 1. Clonar o repositório em uma pasta de sua preferência
@@ -70,7 +71,7 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 8. Clicar na aba 'Specs' e selecionar o teste que deseja executar
 
-### Extra
+### Performance
 
 Também podemos executar os testes em modo Headless para ganharmos ainda mais performance em nossa execução, basta executar:
 
