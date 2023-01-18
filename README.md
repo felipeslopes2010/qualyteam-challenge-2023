@@ -72,7 +72,7 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 ### Extra
 
-Também podemos executar os testes em modo Headless para ganharmos ainda mais performance em nossa execução por meio do comando:
+Também podemos executar os testes em modo Headless para ganharmos ainda mais performance em nossa execução, basta executar:
 
 ***npx cypress run***, ou também ***npm run test***
 
