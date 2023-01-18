@@ -1,4 +1,15 @@
-# Challenge admissão QA QualyTeam 2023 💻
+<div align="center">
+  <img src="https://qualyteam.com/pb/wp-content/uploads/2017/07/qualyteam-software-gestao-da-qualidade.png">
+
+
+![GitHub top language](https://img.shields.io/github/languages/top/felipeslopes2010/qualyteam-challenge-2023)<space><space>
+![Lines of Code](https://img.shields.io/tokei/lines/github/felipeslopes2010/qualyteam-challenge-2023)<space><space>
+![GitHub repo size](https://img.shields.io/github/repo-size/felipeslopes2010/qualyteam-challenge-2023)<space><space>
+![Feito por](https://img.shields.io/badge/feito%20por-Felipe%20Santos-blueviolet)
+
+ </div align="center">
+
+# Challenge Qualyteam QA 2023 💻
 
 👋 Seja bem-vinda(o)!
 
@@ -49,7 +60,7 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 5 - Instalar o Cypress e outras libs por meio do comando:
 
-npm i @faker-js/faker@7.6.0 cypress@12.3.0 cypress-plugin-api@2.6.1 -D
+npm i @faker-js/faker@7.6.0 cypress@12.3.0 -D
 
 6 - Executar o comando no terminal do VS Code:
 
@@ -59,5 +70,22 @@ npx cypress open
 
 8 - Clicar na aba 'Specs' e selecionar o teste que deseja executar
 
+---
+
 ## Muito obrigado pela oportunidade! 💖
-Foi muito divertido testar as aplicações, espero nos vermos em breve hahaha! Abraços 😉👋
+Foi muito divertido testar as aplicações e colocar em prática o que aprendi ao longo das semanas de estudos neste desafio.
+
+Espero nos vermos em breve hahaha! Abraços 😉👋
+
+
+## Contato
+
+<a href="https://www.linkedin.com/in/felipe-santos-lopes-1a873416b/">
+ <img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/C4D03AQGl6O7xKpQnvQ/profile-displayphoto-shrink_800_800/0/1535575091116?e=1679529600&v=beta&t=i8rur39YWY6k370H2SEOn7SpOSJIr_TSMhBuOEosGnA" width="100px;" alt="Felipe Santos"/>
+<br />
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Felipe%20Santos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/felipe-santos-lopes-1a873416b/)](https://www.linkedin.com/in/felipe-santos-lopes-1a873416b/)
+[![Hotmail Badge](https://img.shields.io/badge/-felipeslopes2010@hotmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:felipeslopes2010@hotmail.com)](mailto:felipeslopes2010@hotmail.com)
+
+---
