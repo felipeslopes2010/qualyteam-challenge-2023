@@ -3,7 +3,7 @@ describe('Testa Date Picker QA-Ninja', () => {
   const MES_ANIVERSARIO = '03'
   const DIA_ANIVERSARIO = '17'
   const ANO_ATUAL = new Date().getFullYear()
-  const diaAniversario = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_ATUAL}`)
+  const dataAniversario = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_ATUAL}`)
   const dataAtualFormatada = new Date().toLocaleDateString(local)
 
   beforeEach(() => {
@@ -50,16 +50,16 @@ describe('Testa Date Picker QA-Ninja', () => {
   })
 
   it('Extra 1: Altera Data para aniversário e valida sua seleção', () => {
-    const diaAniversarioFormatado = diaAniversario.toLocaleDateString(local)
+    const diaAniversarioFormatado = dataAniversario.toLocaleDateString(local)
 
-    cy.clock(diaAniversario)
+    cy.clock(dataAniversario)
     cy.visit('/datepicker')
 
     cy.get('.datetimepicker-dummy-input').should('have.value', diaAniversarioFormatado)
   })
 
   it('Extra 2: Altera Data para aniversário do próximo ano e valida sua seleção', () => {    
-    const aniversarioProximoAno = diaAniversario.getFullYear() + 1
+    const aniversarioProximoAno = dataAniversario.getFullYear() + 1
     const proximoAniversario = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${aniversarioProximoAno}`)
     const proximoAniversarioFormatado = proximoAniversario.toLocaleDateString(local)
     
