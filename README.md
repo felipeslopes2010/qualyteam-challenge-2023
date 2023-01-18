@@ -11,7 +11,7 @@
 
 # Challenge Qualyteam QA 2023 💻
 
-👋 Seja bem-vinda(o)!
+👋 Olá, seja bem-vindo(a) ao meu teste técnico de QA para a Qualyteam!
 
 ## O que foi testado ✏️
 
@@ -82,7 +82,7 @@ Também podemos executar os testes em modo Headless para ganharmos ainda mais pe
 ## Muito obrigado pela oportunidade! 💖
 Foi muito divertido testar as aplicações e colocar em prática o que aprendi ao longo das semanas de estudos neste desafio.
 
-Espero nos vermos em breve hahaha! Abraços 😉👋
+Espero nos vermos em breve, hahaha! Abraços 😉👋
 
 
 ## Contato
