@@ -1,12 +1,11 @@
 import { faker } from '@faker-js/faker';
-const { delay } = require("bluebird")
 
 describe('Testa Login do Usuário Orkut QA-Ninja', () => {
   beforeEach(() => {
     cy.visit('/login')
   })
 
-  it('Valida mensagem de erro ao realizar Login sem Nickname', () => {
+  it.only('Valida mensagem de erro ao realizar Login sem Nickname', () => {
     const password = Cypress.env('user_password')
     cy.get('input[type=password]').type(password, { log: false, delay: 0 })
     cy.get('button[type="submit"]').click()
