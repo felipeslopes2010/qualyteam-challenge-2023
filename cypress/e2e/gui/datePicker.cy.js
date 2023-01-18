@@ -3,6 +3,7 @@ describe('Testa Date Picker QA-Ninja', () => {
   const MES_ANIVERSARIO = '03'
   const DIA_ANIVERSARIO = '17'
   const ANO_ATUAL = new Date().getFullYear()
+  const ANO_NASCIMENTO = '1995'
   const dataAniversario = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_ATUAL}`)
   const dataAtualFormatada = new Date().toLocaleDateString(local)
 
@@ -26,36 +27,36 @@ describe('Testa Date Picker QA-Ninja', () => {
   })
 
   it('Seleciona data de aniversário', () => {
-    const diaAniversarioFormatado = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_ATUAL}`).toLocaleDateString(local)
+    const dataAniversarioFormatado = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_ATUAL}`).toLocaleDateString(local)
 
     cy.gui_clicaCalendario()
     cy.get('.datepicker-nav').click()
     cy.get(`[data-month=${MES_ANIVERSARIO}]`).click()
     cy.get('.is-current-month').contains(DIA_ANIVERSARIO).click()
 
-    cy.get('.datetimepicker-dummy-input').should('have.value', diaAniversarioFormatado)
+    cy.get('.datetimepicker-dummy-input').should('have.value', dataAniversarioFormatado)
   })
 
-  it.only('Seleciona dia atual no mês anterior', () => {
+  it('Seleciona dia atual no mês anterior', () => {
     const dataAtual = new Date()
     const diaAtual = dataAtual.getDate()
     const mesAnterior = dataAtual.getMonth() - 1
-    const diaAtualUltimoMesFormatado = new Date(dataAtual.getFullYear(), mesAnterior, dataAtual.getDate()).toLocaleDateString(local)
+    const dataAtualUltimoMesFormatado = new Date(dataAtual.getFullYear(), mesAnterior, dataAtual.getDate()).toLocaleDateString(local)
 
     cy.gui_clicaCalendario()
     cy.get('.datepicker-nav-previous').click()
     cy.get('.is-current-month').contains(diaAtual).click()
 
-    cy.get('.datetimepicker-dummy-input').should('have.value', diaAtualUltimoMesFormatado)
+    cy.get('.datetimepicker-dummy-input').should('have.value', dataAtualUltimoMesFormatado)
   })
 
   it('Extra 1: Altera Data para aniversário e valida sua seleção', () => {
-    const diaAniversarioFormatado = dataAniversario.toLocaleDateString(local)
+    const dataAniversarioFormatado = dataAniversario.toLocaleDateString(local)
 
     cy.clock(dataAniversario)
     cy.visit('/datepicker')
 
-    cy.get('.datetimepicker-dummy-input').should('have.value', diaAniversarioFormatado)
+    cy.get('.datetimepicker-dummy-input').should('have.value', dataAniversarioFormatado)
   })
 
   it('Extra 2: Altera Data para aniversário do próximo ano e valida sua seleção', () => {    
@@ -67,5 +68,16 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.visit('/datepicker')
 
     cy.get('.datetimepicker-dummy-input').should('have.value', proximoAniversarioFormatado)
+  })
+
+  it('Extra 3: Altera Data para o dia do nascimento e verifica se era uma Sexta-Feira', () => {
+    const dataNascimento = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${ANO_NASCIMENTO}`)
+    const dataNascimentoFormatado = dataNascimento.toLocaleDateString(local)
+
+    cy.clock(dataNascimento)
+    cy.visit('/datepicker')
+
+    cy.get('.datetimepicker-dummy-input').should('have.value', dataNascimentoFormatado)
+    cy.get('.datetimepicker-selection-weekday').should('have.text', 'sexta-feira')
   })
 })
