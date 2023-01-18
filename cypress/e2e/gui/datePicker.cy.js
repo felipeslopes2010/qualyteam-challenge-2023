@@ -68,5 +68,4 @@ describe('Testa Date Picker QA-Ninja', () => {
 
     cy.get('.datetimepicker-dummy-input').should('have.value', proximoAniversarioFormatado)
   })
-  
 })

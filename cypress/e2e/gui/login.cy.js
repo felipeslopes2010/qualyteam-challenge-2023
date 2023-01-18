@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-describe('Testa Login do Usuário Orkut QA-Ninja', () => {
+describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
   beforeEach(() => {
     cy.visit('/login')
   })
