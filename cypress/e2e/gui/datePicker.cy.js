@@ -3,7 +3,10 @@ const { delay } = require("bluebird")
 
 describe('Testa Date Picker QA-Ninja', () => {
   const locale = 'pt-br'
-  
+  const BIRTHDAY_MONTH = '03'
+  const BIRTHDAY_DATE = '17'
+  const CURRENT_YEAR = new Date().getFullYear()
+
   beforeEach(() => {
     cy.visit('/datepicker')
   })
@@ -47,6 +50,29 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.get('.datepicker-days').contains(currentDay).click()
 
     cy.get('.datetimepicker-dummy-input').should('have.value', todayLastMonth)
+  })
+
+  it('Extra 1: Altera Data para aniversário e valida sua seleção', () => {
+    const birthday = new Date(`${BIRTHDAY_MONTH}-${BIRTHDAY_DATE}-${CURRENT_YEAR}`)
+    const fakeToday = birthday.toLocaleDateString(locale);
+
+    cy.clock(birthday)
+    cy.visit('/datepicker')
+
+    cy.get('.datetimepicker-dummy-input').should('have.value', fakeToday)
+  })
+
+  it('Extra 2: Altera Data para aniversário do próximo ano e valida sua seleção', () => {
+
+    const birthday = new Date(`${BIRTHDAY_MONTH}-${BIRTHDAY_DATE}-${CURRENT_YEAR}`)
+    const nextYearBirthday = birthday.getFullYear() + 1
+    const nextBirthday = new Date(`${BIRTHDAY_MONTH}-${BIRTHDAY_DATE}-${nextYearBirthday}`)
+    const fakeToday = nextBirthday.toLocaleDateString(locale)
+    
+    cy.clock(nextBirthday)
+    cy.visit('/datepicker')
+
+    cy.get('.datetimepicker-dummy-input').should('have.value', fakeToday)
   })
   
 })
