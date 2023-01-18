@@ -45,30 +45,36 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 - Faker-JS 7.6.0 para criação de dados falsos
 
 ## Como reproduzir 🧪
-1 - Clonar o repositório em uma pasta de sua preferência
+1. Clonar o repositório em uma pasta de sua preferência
 
-2 - Criar um arquivo com o nome cypress.env.json na raiz do projeto
+2. Criar um arquivo com o nome **cypress.env.json** na raiz do projeto
 
-3 - Preencher o arquivo com os seguintes dados:
+3. Preencher o arquivo com os seguintes dados:
 
-{
-    "user_name": "papitorocks",
-    "user_password": "pwd123"
-}
+     {
+          "user_name": "papitorocks",
+         "user_password": "pwd123"
+     }
 
-4 - Abrir o Terminal do VS Code (https://code.visualstudio.com/Download)
+4. Abrir o Terminal do VS Code (https://code.visualstudio.com/Download)
 
-5 - Instalar o Cypress e outras libs por meio do comando:
+5. Instalar o Cypress e outras libs por meio do comando:
 
-npm i @faker-js/faker@7.6.0 cypress@12.3.0 -D
+      ***npm i @faker-js/faker@7.6.0 cypress@12.3.0 -D***
 
-6 - Executar o comando no terminal do VS Code:
+6. Executar o comando no terminal do VS Code:
 
-npx cypress open
+      ***npx cypress open***, ou também ***npm run cy:open***
 
-7 - Após aplicação abrir, selecionar a opção 'E2E Testing' e selecionar o navegador de sua preferência
+7. Após aplicação abrir, selecionar a opção 'E2E Testing' e selecionar o navegador de sua preferência
 
-8 - Clicar na aba 'Specs' e selecionar o teste que deseja executar
+8. Clicar na aba 'Specs' e selecionar o teste que deseja executar
+
+### Extra
+
+Também podemos executar os testes em modo Headless para ganharmos ainda mais performance em nossa execução por meio do comando:
+
+***npx cypress run***, ou também ***npm run test***
 
 ---
 
