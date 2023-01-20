@@ -10,14 +10,14 @@ describe('Testa Date Picker QA-Ninja', () => {
   beforeEach(() => {
     cy.visit('/datepicker')
   })
-  
+
   it('Verifica se data atual é preenchida ao entrar no site', () => {
 
     cy.get('.datetimepicker-dummy-input').should('have.value', dataAtualFormatada)
   })
 
   it('Limpa Date Picker e trás data atual através do botão Today', () => {
-    
+
     cy.gui_clicaCalendario()
     cy.get('.datetimepicker-footer-clear').click()
     cy.gui_clicaCalendario()
@@ -59,11 +59,11 @@ describe('Testa Date Picker QA-Ninja', () => {
     cy.get('.datetimepicker-dummy-input').should('have.value', dataAniversarioFormatado)
   })
 
-  it('Extra 2: Altera Data para aniversário do próximo ano e valida sua seleção', () => {    
+  it('Extra 2: Altera Data para aniversário do próximo ano e valida sua seleção', () => {
     const aniversarioProximoAno = dataAniversario.getFullYear() + 1
     const proximoAniversario = new Date(`${MES_ANIVERSARIO}-${DIA_ANIVERSARIO}-${aniversarioProximoAno}`)
     const proximoAniversarioFormatado = proximoAniversario.toLocaleDateString(local)
-    
+
     cy.clock(proximoAniversario)
     cy.visit('/datepicker')
 

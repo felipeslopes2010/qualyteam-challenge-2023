@@ -78,7 +78,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
     cy.visit('/secure')
 
     cy.contains('Você deve fazer o login para ver a área logada!').should('be.visible')
-    
+
     cy.verificaUrl('login')
   })
 
@@ -88,17 +88,17 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
     cy.contains('Formulário de login').should('be.visible')
     cy.contains('Checkboxes').should('be.visible')
     cy.contains('Radio Buttons').should('be.visible')
-    
+
     cy.verificaUrl()
   })
 
   it('Extra 2: Volta para a página inicial e entra na página de Date Picker', () => {
-    cy.gui_clicaVoltar()    
+    cy.gui_clicaVoltar()
     cy.contains('Date Picker').click()
 
     cy.get('.subtitle').should('have.text', 'Um componente customizado para manipulação de datas com seleção do mês, dia e ano :)')
 
     cy.verificaUrl('datepicker')
   })
-  
+
 })
