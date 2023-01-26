@@ -71,11 +71,16 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 8. Clicar na aba 'Specs' e selecionar o teste que deseja executar
 
-### Performance
+## Performance 📈
 
 Também podemos executar os testes em modo Headless para ganharmos ainda mais performance em nossa execução, basta executar:
 
 ***npm test***, ou ***npx cypress run***
+
+
+**Nota:** Caso escolha o **npm test**, irá aparecer uma surpresa no Terminal durante a execução dos testes!
+
+ <img src=https://m.media-amazon.com/images/I/61QeX8HghML.png style=width:8%>
 
 ---
 
