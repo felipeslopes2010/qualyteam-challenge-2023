@@ -61,11 +61,11 @@ http://training-wheels-qaninja.herokuapp.com/datepicker
 
 5. Instalar o Cypress e outras libs por meio do comando:
 
-      ***npm i @faker-js/faker@7.6.0 cypress@12.3.0 -D***
+      ***npm install, ou também npm i @faker-js/faker@7.6.0 cypress@12.3.0 -D***
 
 6. Executar o comando no terminal do VS Code:
 
-      ***npx cypress open***, ou também ***npm run cy:open***
+      ***npx cypress open***, ou ***npm run cy:open***
 
 7. Após aplicação abrir, selecionar a opção 'E2E Testing' e selecionar o navegador de sua preferência
 
