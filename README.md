@@ -80,7 +80,8 @@ Também podemos executar os testes em modo Headless para ganharmos ainda mais pe
 
 **Nota:** Caso escolha o **npm test**, irá aparecer uma surpresa no Terminal durante a execução dos testes!
 
- <img src=https://m.media-amazon.com/images/I/61QeX8HghML.png style=width:12% href="https://www.youtube.com/watch?v=zqLEO5tIuYs&ab_channel=brmbrmcar">
+<a href="https://www.youtube.com/watch?v=zqLEO5tIuYs&ab_channel=brmbrmcar">
+ <img src=https://m.media-amazon.com/images/I/61QeX8HghML.png style=width:12% />
 
 ---
 
