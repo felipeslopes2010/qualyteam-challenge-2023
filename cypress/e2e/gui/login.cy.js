@@ -12,12 +12,10 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       .should('be.visible')
       .type(senha, { log: false, delay: 0 })
 
-    cy.get('button[type="submit"]').click()
+    cy.gui_clicaLogin()
 
     cy.contains('Ops! Informe seu nickname.')
       .should('be.visible')
-
-    cy.verificaUrl('login')
   })
 
   it('Valida mensagem de erro ao realizar Login sem Senha', () => {
@@ -27,14 +25,10 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       .should('be.visible')
       .type(usuarioLogin, { delay: 0 })
 
-    cy.get('button[type="submit"]')
-      .should('be.visible')
-      .click()
+    cy.gui_clicaLogin()
 
     cy.contains('Ops! Informe sua senha secreta.')
       .should('be.visible')
-
-    cy.verificaUrl('login')
   })
 
   it('Valida Login com Sucesso', () => {
@@ -43,7 +37,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       senha: Cypress.env('usuario_senha')
     }
 
-    cy.gui_realizaLogin(usuario)
+    cy.gui_preencheFormulario(usuario)
 
     cy.contains('Olá Papito, bem-vindo ao Orkut')
       .should('be.visible')
@@ -60,7 +54,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       senha: Cypress.env('usuario_senha')
     }
 
-    cy.gui_realizaLogin(usuarioNicknameIncorreto)
+    cy.gui_preencheFormulario(usuarioNicknameIncorreto)
 
     cy.contains('Oops! nickname e/ou senha incorretos :(')
       .should('be.visible')
@@ -74,7 +68,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       senha: faker.random.word(),
     }
 
-    cy.gui_realizaLogin(usuarioSenhaIncorreta)
+    cy.gui_preencheFormulario(usuarioSenhaIncorreta)
 
     cy.contains('Oops! nickname e/ou senha incorretos :(')
       .should('be.visible')
@@ -88,7 +82,7 @@ describe('Testa Formulário de Login do Usuário Orkut QA-Ninja', () => {
       senha: faker.random.word(),
     }
 
-    cy.gui_realizaLogin(usuarioNicknameESenhaIncorretos)
+    cy.gui_preencheFormulario(usuarioNicknameESenhaIncorretos)
 
     cy.contains('Oops! nickname e/ou senha incorretos :(')
       .should('be.visible')
